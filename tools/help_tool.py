@@ -11,5 +11,5 @@ def on_tool_enable():
             '<m>: view month page\n' +
             '<y>: view year page\n' +
             '<Y>: browse years')
-    with term.cbreak(), term.hidden_cursor():
-        term.inkey()
+    with term.cbreak():
+        return term.inkey()
