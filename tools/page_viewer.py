@@ -7,68 +7,46 @@ term = Terminal()
 
 
 def on_render():
-    print(term.move_xy(0, 0) + term.clear +
-          term.color_rgb(80, 80, 80) + term.move_up)
+    sep = '╚' + '═' * (term.width - 2) + '╝' + term.move_down + term.move_x(0)
+    
+    view = term.move_xy(0, 0) + term.clear + \
+        term.color_rgb(80, 80, 80) + term.move_up
+    view += print_title(' Jan 20 ')
 
-    print_title(' Jan 20 ')
-    print('║ [x] Do nothing all day')
-    (y, x) = term.get_location()
-    with term.location(term.width - 1, y - 1):
-        print('║')
-    print('╚' + '═' * (term.width - 2) + '╝' + term.move_down)
+    view += term.move_x(0)
+    view += '║ [x] Do nothing all day\n'
+    view += sep
 
-    print_title(' Jan 21 ')
-    print('║ [x] Come up with better name')
-    (y, x) = term.get_location()
-    with term.location(term.width - 1, y - 1):
-        print('║')
-    print('║ [x] Set up git repo')
+    view += print_title(' Jan 21 ')
+    view += term.move_x(0)
+    view += '║ [x] Come up with better name\n║ [x] Set up git repo\n║ [-] Go to sleep\n║ [ ] Finish project\n'
+    view += sep
 
-    (y, x) = term.get_location()
-    with term.location(term.width - 1, y - 1):
-        print('║')
-    print('║ [-] Go to sleep')
+    view += TERM_COLOR_PRIMARY
+    view += print_title(' Jan 22 ')
+    view += term.move_x(0)
+    view += '║ [ ] Keep writing python\n║ [ ] Figure out how tf to do this shit\n'
+    view += sep
+    
+    view += print_help()
 
-    (y, x) = term.get_location()
-    with term.location(term.width - 1, y - 1):
-        print('║')
-    print('║ [ ] Finish project')
-
-    (y, x) = term.get_location()
-    with term.location(term.width - 1, y - 1):
-        print('║')
-    print('╚' + '═' * (term.width - 2) + '╝')
-
-    print(TERM_COLOR_PRIMARY)
-    print_title(' Jan 22 ')
-    print('║ [ ] Keep writing python')
-
-    (y, x) = term.get_location()
-    with term.location(term.width - 1, y - 1):
-        print('║')
-    print('║ [ ] Figure out how tf to do this shit')
-
-    (y, x) = term.get_location()
-    with term.location(term.width - 1, y - 1):
-        print('║')
-    print('╚' + '═' * (term.width - 2) + '╝')
-
-    print_help()
+    print(view, end='')
 
     with term.cbreak():
         return term.inkey()
 
 
-def print_title(str):
-    print(term.move_up + '╔' + '═' * (term.width-2) + '╗')
-
+def print_border():
     (y, x) = term.get_location()
+    with term.location(term.width - 1, y - 1):
+        print('║')
 
+
+def print_title(str):
+    res = '╔' + '═' * (term.width - 2) + '╗'
     x = (term.width - len(str)) // 2
-    with term.location(x, y-1):
-        print(str)
+    return res + term.move_x(x) + str + term.move_down
 
 
 def print_help():
-    with term.location(0, term.height - 1):
-        print('<↑>: prev day\t<↓>: next day\t<e>: edit day\t<t>: edit today\t<r>: return home' + term.move_up)
+    return term.move_xy(0, term.height - 1) + '<↑>: prev day\t<↓>: next day\t<e>: edit day\t<t>: edit today\t<r>: return home'
