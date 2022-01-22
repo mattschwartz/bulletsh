@@ -1,0 +1,9 @@
+{
+    "years": [2019, 2020, 2021, 2022],
+    "page_by_years": {
+        "2019": {
+            "date": "2019/01/01",
+            "content": "[x] Do a thing\n[*] Meeting\n[ ] Unfinished task"
+        }
+    }
+}
