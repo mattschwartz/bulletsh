@@ -29,6 +29,8 @@ def render():
     print_curr_tool()
     print_title()
 
+def reset_on_color():
+    return term.on_color_rgb(*COLOR_BG)
 
 def print_title():
     with term.location(term.width - len(TITLE) - 1, term.height - 1):

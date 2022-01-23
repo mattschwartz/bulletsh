@@ -3,7 +3,7 @@ from blessed import Terminal
 term = Terminal()
 
 COLOR_PRIMARY = (200, 75, 49)
-COLOR_SECONDARY = (45, 66, 99)
+COLOR_SECONDARY = (70, 91, 124)
 COLOR_FG = (236, 219, 186)
 COLOR_BG = (25, 25, 25)
 

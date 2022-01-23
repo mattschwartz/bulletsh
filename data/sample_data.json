@@ -1,9 +1,58 @@
 {
-    "years": [2019, 2020, 2021, 2022],
-    "page_by_years": {
-        "2019": {
-            "date": "2019/01/01",
-            "content": "[x] Do a thing\n[*] Meeting\n[ ] Unfinished task"
+    "days": [
+        {
+            "date": "2022-01-20",
+            "tasks": [
+                {
+                    "type": "task",
+                    "text": "This task was done today",
+                    "isCompleted": true
+                }
+            ]
+        },
+        {
+            "date": "2022-01-21",
+            "tasks": [
+                {
+                    "type": "task",
+                    "text": "This task was done",
+                    "isCompleted": true
+                },
+                {
+                    "type": "task",
+                    "text": "This task was pushed to tomorrow",
+                    "isCompleted": false
+                },
+                {
+                    "type": "task",
+                    "text": "This task was done, too",
+                    "isCompleted": true
+                },
+                {
+                    "type": "cancelled",
+                    "text": "This task was cancelled",
+                    "isCompleted": false
+                },
+                {
+                    "type": "note",
+                    "text": "Just a note"
+                }
+            ]
+        },
+        {
+            "date": "2022-01-22",
+            "tasks": [
+                {
+                    "type": "task",
+                    "text": "Something to do",
+                    "isCompleted": false
+                },
+                {
+                    "type": "task",
+                    "text": "Another thing to do",
+                    "isCompleted": false
+                }
+            ]
         }
-    }
+    ]
 }
