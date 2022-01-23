@@ -1,6 +1,10 @@
 from blessed import Terminal
 
 
+def center_string(term: Terminal, width: int, text: str, x_start: int):
+    x = (width - len(text)) // 2 + x_start
+    return term.move_x(x) + text
+
 def print_title(term: Terminal, text: str):
     res = '╔' + '═' * (term.width - 2) + '╗'
     x = (term.width - len(text)) // 2

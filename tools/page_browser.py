@@ -96,7 +96,7 @@ class PageBrowserTool:
 
         view += (TERM_COLOR_SECONDARY +
                  self.term.move_y(self.term.height - 2) +
-                 self.center_string(self.term.width,
+                 utils.center_string(self.term, self.term.width,
                                     '<TAB>: switch panel select right    <BTAB>: switch panel select left    <q>: return to main',
                                     1))
 
@@ -128,13 +128,13 @@ class PageBrowserTool:
 
             if tab.is_selected:
                 result += (self.term.bold +
-                           self.center_string(tab_width, f'{tab.title.upper()}', x_offs) +
+                           utils.center_string(self.term, tab_width, f'{tab.title.upper()}', x_offs) +
                            self.term.normal +
                            TERM_COLOR_FG +
                            TERM_COLOR_BG)
             else:
                 result += (TERM_COLOR_FG_LIGHT +
-                           self.center_string(tab_width, tab.title, x_offs) +
+                           utils.center_string(self.term, tab_width, tab.title, x_offs) +
                            TERM_COLOR_FG)
             result += (self.term.move_x(far_right_x - 1) +
                        '│' +
@@ -169,13 +169,14 @@ class PageBrowserTool:
             for item in tab.items:
                 if tab.is_selected:
                     if item.is_selected:
-                        result += self.center_string(tab_width, f'> {item.text} <', x_offs)
+                        result += utils.center_string(self.term, tab_width,
+                                                     f'> {item.text} <', x_offs)
                     else:
-                        result += self.center_string(tab_width,
+                        result += utils.center_string(self.term, tab_width,
                                                      item.text, x_offs)
                 else:
                     result += (TERM_COLOR_FG_LIGHT +
-                               self.center_string(tab_width, item.text, x_offs) +
+                               utils.center_string(self.term, tab_width, item.text, x_offs) +
                                TERM_COLOR_FG)
                 result += self.term.move_down
             result += self.term.move_up(len(tab.items))
@@ -209,7 +210,3 @@ class PageBrowserTool:
                    '┘')
 
         return result
-
-    def center_string(self, width, text: str, x_offs):
-        x = (width - len(text)) // 2 + x_offs
-        return self.term.move_x(x) + text

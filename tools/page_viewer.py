@@ -4,7 +4,7 @@ from enum import Enum
 from blessed import Terminal
 from color_scheme import TERM_COLOR_FG, TERM_COLOR_SECONDARY
 from data_manager import (DataAccessor,
-                          JacketData,
+                          JacketData, JacketPage,
                           TaskType)
 
 term = Terminal()
@@ -29,7 +29,12 @@ def render_days(data: JacketData):
     res = ''
     today_date = date.today()
 
-    for page in data.sorted_pages():
+    pages_to_render = list(data.sorted_pages())
+
+    if today_date not in map(lambda t: t.date, pages_to_render):
+        pages_to_render.insert(0, JacketPage(today_date, []))
+
+    for page in pages_to_render:
         title = f' {page.date_str()} '
 
         is_current_day = today_date == page.date
@@ -39,6 +44,11 @@ def render_days(data: JacketData):
             res += term.color_rgb(80, 80, 80)
 
         res += utils.print_title(term, title) + term.move_x(0)
+
+        if len(page.tasks) == 0:
+            res += ('║' + 
+                    utils.center_string(term, term.width, 'No tasks today', 0) +
+                    EOL_BAR)
 
         for task in page.tasks:
             if task.task_type == TaskType.TASK:
