@@ -1,12 +1,15 @@
 {
-    "days": [
+    "pages": [
         {
             "date": "2022-01-20",
             "tasks": [
                 {
                     "type": "task",
                     "text": "This task was done today",
-                    "isCompleted": true
+                    "isCompleted": true,
+                    "isCancelled": false,
+                    "isMigratedFwd": false,
+                    "isMigratedBwd": false
                 }
             ]
         },
@@ -16,26 +19,42 @@
                 {
                     "type": "task",
                     "text": "This task was done",
-                    "isCompleted": true
+                    "isCompleted": true,
+                    "isCancelled": false,
+                    "isMigratedFwd": false,
+                    "isMigratedBwd": false
                 },
                 {
                     "type": "task",
                     "text": "This task was pushed to tomorrow",
-                    "isCompleted": false
+                    "isCompleted": false,
+                    "isCancelled": false,
+                    "isMigratedFwd": false,
+                    "isMigratedBwd": false
                 },
                 {
                     "type": "task",
                     "text": "This task was done, too",
-                    "isCompleted": true
+                    "isCompleted": true,
+                    "isCancelled": false,
+                    "isMigratedFwd": false,
+                    "isMigratedBwd": false
                 },
                 {
-                    "type": "cancelled",
+                    "type": "task",
                     "text": "This task was cancelled",
-                    "isCompleted": false
+                    "isCompleted": false,
+                    "isCancelled": true,
+                    "isMigratedFwd": false,
+                    "isMigratedBwd": false
                 },
                 {
                     "type": "note",
-                    "text": "Just a note"
+                    "text": "Just a note",
+                    "isCompleted": true,
+                    "isCancelled": false,
+                    "isMigratedFwd": false,
+                    "isMigratedBwd": false
                 }
             ]
         },
@@ -45,12 +64,18 @@
                 {
                     "type": "task",
                     "text": "Something to do",
-                    "isCompleted": false
+                    "isCompleted": false,
+                    "isCancelled": false,
+                    "isMigratedFwd": false,
+                    "isMigratedBwd": false
                 },
                 {
                     "type": "task",
                     "text": "Another thing to do",
-                    "isCompleted": false
+                    "isCompleted": false,
+                    "isCancelled": false,
+                    "isMigratedFwd": false,
+                    "isMigratedBwd": false
                 }
             ]
         }
