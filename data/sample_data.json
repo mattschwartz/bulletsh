@@ -4,12 +4,12 @@
             "date": "2022-01-20",
             "tasks": [
                 {
-                    "type": "task",
+                    "type": "TASK",
                     "text": "This task was done today",
-                    "isCompleted": true,
-                    "isCancelled": false,
-                    "isMigratedFwd": false,
-                    "isMigratedBwd": false
+                    "completed": true,
+                    "cancelled": false,
+                    "migratedForward": false,
+                    "migratedBackward": false
                 }
             ]
         },
@@ -17,44 +17,44 @@
             "date": "2022-01-21",
             "tasks": [
                 {
-                    "type": "task",
+                    "type": "TASK",
                     "text": "This task was done",
-                    "isCompleted": true,
-                    "isCancelled": false,
-                    "isMigratedFwd": false,
-                    "isMigratedBwd": false
+                    "completed": true,
+                    "cancelled": false,
+                    "migratedForward": false,
+                    "migratedBackward": false
                 },
                 {
-                    "type": "task",
+                    "type": "TASK",
                     "text": "This task was pushed to tomorrow",
-                    "isCompleted": false,
-                    "isCancelled": false,
-                    "isMigratedFwd": false,
-                    "isMigratedBwd": false
+                    "completed": false,
+                    "cancelled": false,
+                    "migratedForward": false,
+                    "migratedBackward": false
                 },
                 {
-                    "type": "task",
+                    "type": "TASK",
                     "text": "This task was done, too",
-                    "isCompleted": true,
-                    "isCancelled": false,
-                    "isMigratedFwd": false,
-                    "isMigratedBwd": false
+                    "completed": true,
+                    "cancelled": false,
+                    "migratedForward": false,
+                    "migratedBackward": false
                 },
                 {
-                    "type": "task",
+                    "type": "TASK",
                     "text": "This task was cancelled",
-                    "isCompleted": false,
-                    "isCancelled": true,
-                    "isMigratedFwd": false,
-                    "isMigratedBwd": false
+                    "completed": false,
+                    "cancelled": true,
+                    "migratedForward": false,
+                    "migratedBackward": false
                 },
                 {
-                    "type": "note",
+                    "type": "NOTE",
                     "text": "Just a note",
-                    "isCompleted": true,
-                    "isCancelled": false,
-                    "isMigratedFwd": false,
-                    "isMigratedBwd": false
+                    "completed": true,
+                    "cancelled": false,
+                    "migratedForward": false,
+                    "migratedBackward": false
                 }
             ]
         },
@@ -62,20 +62,20 @@
             "date": "2022-01-22",
             "tasks": [
                 {
-                    "type": "task",
+                    "type": "TASK",
                     "text": "Something to do",
-                    "isCompleted": false,
-                    "isCancelled": false,
-                    "isMigratedFwd": false,
-                    "isMigratedBwd": false
+                    "completed": false,
+                    "cancelled": false,
+                    "migratedForward": false,
+                    "migratedBackward": false
                 },
                 {
-                    "type": "task",
+                    "type": "TASK",
                     "text": "Another thing to do",
-                    "isCompleted": false,
-                    "isCancelled": false,
-                    "isMigratedFwd": false,
-                    "isMigratedBwd": false
+                    "completed": false,
+                    "cancelled": false,
+                    "migratedForward": false,
+                    "migratedBackward": false
                 }
             ]
         }
